@@ -1,0 +1,49 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu h1 {
+    color: #262626;
+    font-weight: 500;
+}
+
+.menu_text {
+    max-width: 50%;
+    columns: #808080;
+}
+
+.menu_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    margin: 20px 0px;
+    overflow-x: scroll;
+}
+
+.menu_list::-webkit-scrollbar {
+    display: none;
+}
+
+.menu_list_items img {
+    width: 7.5vw;
+    min-width: 80px;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.menu_list_items p {
+    margin-top: 10px;
+    color: #74747474;
+    font-size: max(1.4vw, 16px);
+    cursor: pointer;
+}
+
+.menu_list_items .active {
+    border: 4px solid tomato;
+    padding: 2px;
+}
+
