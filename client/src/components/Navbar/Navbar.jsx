@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets.js'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     const [menu, setMenu] = useState('home')
@@ -8,30 +9,27 @@ const Navbar = () => {
         <div className="navbar">
             <img src={assets.logo} alt="Tomato" className="navbar_logo" />
             <ul className="navbar_items">
-                <li
+                <Link
+                    to={'/'}
                     onClick={() => setMenu('home')}
                     className={menu == 'home' ? 'active' : 'null'}
                 >
                     Home
-                </li>
-                <li
+                </Link>
+                <a
+                    href="#menu"
                     onClick={() => setMenu('menu')}
                     className={menu == 'menu' ? 'active' : 'null'}
                 >
                     Menu
-                </li>
-                <li
+                </a>
+                <a
+                    href="#contact"
                     onClick={() => setMenu('contact')}
                     className={menu == 'contact' ? 'active' : 'null'}
                 >
                     Contact
-                </li>
-                <li
-                    onClick={() => setMenu('mobile-app')}
-                    className={menu == 'mobile-app' ? 'active' : 'null'}
-                >
-                    Mobile-app
-                </li>
+                </a>
             </ul>
 
             <div className="search">

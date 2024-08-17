@@ -7,7 +7,7 @@ import './FoodDisplay.css'
 const FoodDisplay = ({ category }) => {
     const { food_list } = useContext(StoreContext)
     return (
-        <div className="food_display">
+        <div className="food_display" id="menu">
             <h2>Top Dishes Near You</h2>
             <div className="food_display_list">
                 {food_list.map((item, index) => {
