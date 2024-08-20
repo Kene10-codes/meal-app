@@ -17,7 +17,7 @@ const LoginPopup = ({ setShowLogin }) => {
                     />
                 </div>
                 <div>
-                    <form action="">
+                    <form action="" className="login_popup_inputs">
                         {currentState === 'Log In' ? (
                             <></>
                         ) : (
