@@ -1,10 +1,13 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../../context/StoreContext'
+import { useNavigate } from 'react-router-dom'
 import './Cart.css'
 
 const Cart = () => {
-    const { cartItems, food_list, removeFromCart } = useContext(StoreContext)
-    console.log(food_list)
+    const { cartItems, food_list, removeFromCart, getTotalCartAmount } =
+        useContext(StoreContext)
+    const navigate = useNavigate()
+
     return (
         <div className="cart">
             <div className="cart_items">
@@ -47,33 +50,25 @@ const Cart = () => {
                     <div>
                         <div className="cart_total_details">
                             <p>Sub Total</p>
-                            <p>{0}</p>
+                            <p>{getTotalCartAmount()}</p>
                         </div>
                         <hr />
                         <div className="cart_total_details">
                             <p>Delivery</p>
-                            <p>{2}</p>
+                            <p>{getTotalCartAmount() === 0 ? 0 : 2}</p>
                         </div>
                         <hr />
                         <div className="cart_total_details">
                             <p>Total</p>
-                            <p>{0}</p>
+                            <p>
+                                {getTotalCartAmount() === 0
+                                    ? 0
+                                    : getTotalCartAmount() + 2}
+                            </p>
                         </div>
-                        <button>PROCEED TO CHECKOUT</button>
-                    </div>
-                    <div className="cart_promocode">
-                        <div>
-                            <p>If you have a promo code, Enter it here</p>
-                            <div className="cart_promoode_input">
-                                <input
-                                    type="text"
-                                    placeholder="Enter Promo Code"
-                                    name=""
-                                    id=""
-                                />
-                                <button>Submit </button>
-                            </div>
-                        </div>
+                        <button onClick={() => navigate('/order')}>
+                            PROCEED TO CHECKOUT
+                        </button>
                     </div>
                 </div>
             </div>
