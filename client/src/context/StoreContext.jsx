@@ -20,6 +20,15 @@ const StoreContextProvider = (props) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
     }
 
+    const getTotalotalCount = () => {
+        let totalItems = 0
+        for (const item in cartItems) {
+            console.log(count)
+            let itemFood = food_list.find((food) => {
+                console.log(food)
+            })
+        }
+    }
     const contextValue = {
         food_list,
         cartItems,
